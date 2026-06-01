@@ -11,9 +11,22 @@ namespace OTS2023_V9.Services.Fakes
         public FakeCouponService Coupon { get; set; }
         public Guid UsedCouponId { get; set; }
         public InvalidCouponException invalidCouponExceptionToThrow { get; set; }
+
         public FakeCouponService GetCouponById(Guid id)
         {
             return Coupon;
         }
+
+
+        public void UseCoupon(Guid id)
+        {
+            if (InvalidCouponExceptionToThrow != null)
+            {
+                throw InvalidCouponExceptionToThrow;
+            }
+
+            UsedCouponId = id;
+        }
     }
 }
+

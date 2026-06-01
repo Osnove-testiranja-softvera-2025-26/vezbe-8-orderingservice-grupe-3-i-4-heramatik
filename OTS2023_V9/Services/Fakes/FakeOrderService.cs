@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTS2023_V9.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +16,17 @@ namespace OTS2023_V9.Services.Fakes
         {
             Orders = new List<Order>();
         }
-        public FakeOrderService GetOrderById(Guid id)
+        public Order GetOrderById(Guid id)
         {
             return Orders[0];
         }
-        public List<Order> GetUserOrdersWithDeadLineBetween(Guid id, DateTime monthBefore, DateTime Now)
+        public List<Order> GetUserOrdersWithDeadlineBetween(Guid id, DateTime monthBefore, DateTime Now)
         {
             return Orders;
         }
-        public List<Order> deliveredOrders(string Status.Delivered)
+        public void UpdateTotal(double difference)
         {
-            return Orders = Orders.Status.Delivered;
+            UpdateTotalDifference = difference;
         }
     }
 }

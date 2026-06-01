@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OTS2023_V9.Services.Interfaces;
 
 namespace OTS2023_V9.Services.Fakes
 {
-    internal class FakeLoggerService
+    internal class FakeLoggerService : ILoggerService
     {
-        public 
+        public string LastMessage { get; private set; }
+
+        public void LogError(string message)
+        {
+            LastMessage = message;
+        }
     }
 }
